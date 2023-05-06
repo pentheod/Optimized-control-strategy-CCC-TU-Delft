@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat May  6 20:54:11 2023
-
-@author: penth
-"""
-
 import rhinoscriptsyntax as rs
 
 #mode == 0: presentation
