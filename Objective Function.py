@@ -15,16 +15,6 @@ elif mode == 1:
 elif mode == 2:
     minlim = 750
 
-final_incr_n = []
-final_incr_s = []
-final_incr_w = []
-final_incr_e = []
-final_angle_n = []
-final_angle_s = []
-final_angle_w = []
-final_angle_e = []
-
-
 while len(Ecyl) <= 20:    #Running the optimization until the number of iterations reaches 20
     if mode == 0:    #Presentation mode
         for i in Ewp:
@@ -50,18 +40,18 @@ while len(Ecyl) <= 20:    #Running the optimization until the number of iteratio
         ObjFun = - pen * j  
 if len(Ecyl) == 21:    #End of optimization 
     if mode == 0:    #Presentation mode
-        min_Ecyl = min(Ecyl)
+        min_Ecyl = min(Ecyl)   #best value of Ecyl
         index2 = Ecyl.index(min_Ecyl)
-        min_Ewp = Ewp[index2]
+        min_Ewp = Ewp[index2]   #best value of Ewp
     else:
-        max_Ecyl = max(Ecyl)
+        max_Ecyl = max(Ecyl)    #best value of Ecyl
         index2 = Ecyl.index(max_Ecyl)
-        max_Ewp = Ewp[index2]
-    final_incr_n.append(incr_n[index2])
-    final_incr_s.append(incr_s[index2])
-    final_incr_w.append(incr_w[index2])
-    final_incr_e.append(incr_e[index2])
-    final_angle_n.append(incr_n[index2])
-    final_angle_s.append(incr_s[index2])
-    final_angle_w.append(incr_w[index2])
-    final_angle_e.append(incr_e[index2])
+        max_Ewp = Ewp[index2]   #best value of Ewp
+    final_incr_n = incr_n[index2]
+    final_incr_s = incr_s[index2]
+    final_incr_w = incr_w[index2]
+    final_incr_e = incr_e[index2]
+    final_angle_n = incr_n[index2]
+    final_angle_s = incr_s[index2]
+    final_angle_w = incr_w[index2]
+    final_angle_e = incr_e[index2]
