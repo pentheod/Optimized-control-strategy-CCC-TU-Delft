@@ -4,8 +4,6 @@ import rhinoscriptsyntax as rs
 #mode == 1: meeting
 #mode ==2: workshop
 #minlim: minimum limit (target value) for horizontal illuminance at the workplane
-
-
 minlim = 0
 
 if mode == 0:
@@ -18,27 +16,27 @@ elif mode == 2:
 while len(Ecyl) <= 20:    #Running the optimization until the number of iterations reaches 20
     if mode == 0:    #Presentation mode
         for i in Ewp:
-        index = Ewp.index(i)
-        j = Ecyl[index]
-        if i >= minlim and j <= 1400:   
-            pen = 1
-        elif i < minlim and j < 1400: 
-            pen = 10
-        else:
-            pen = 100
-        ObjFun = pen * j  
+            index = Ewp.index(i)
+            j = Ecyl[index]
+            if i >= minlim and j <= 1400:   
+                pen = 1
+            elif i < minlim and j < 1400: 
+                pen = 10
+            else:
+                pen = 100
+            ObjFun = pen * j  
     else:     #Meeting/Workshop mode
         for i in Ewp:
-        index = Ewp.index(i)
-        j = Ecyl[index]
-        if i >= minlim and j <= 1400:   
-            pen = 10
-        elif i < minlim and j < 1400: 
-            pen = 1
-        else:
-            pen = -100
-        ObjFun = - pen * j  
-if len(Ecyl) == 21:    #End of optimization 
+            index = Ewp.index(i)
+            j = Ecyl[index]
+            if i >= minlim and j <= 1400:   
+                pen = 10
+            elif i < minlim and j < 1400: 
+                pen = 1
+            else:
+                pen = -100
+            ObjFun = - pen * j  
+else:    #End of optimization 
     if mode == 0:    #Presentation mode
         min_Ecyl = min(Ecyl)   #best value of Ecyl
         index2 = Ecyl.index(min_Ecyl)
