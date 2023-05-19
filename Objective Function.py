@@ -38,13 +38,13 @@ while len(Ecyl) <= 20:    #Running the optimization until the number of iteratio
             ObjFun = - pen * j  
 else:    #End of optimization 
     if mode == 0:    #Presentation mode
-        min_Ecyl = min(Ecyl)   #best value of Ecyl
-        index2 = Ecyl.index(min_Ecyl)
-        min_Ewp = Ewp[index2]   #best value of Ewp
+        final_Ecyl = min(Ecyl)   #best value of Ecyl
+        index2 = Ecyl.index(final_Ecyl)
+        final_Ewp = Ewp[index2]   #best value of Ewp
     else:
-        max_Ecyl = max(Ecyl)    #best value of Ecyl
-        index2 = Ecyl.index(max_Ecyl)
-        max_Ewp = Ewp[index2]   #best value of Ewp
+        final_Ecyl = max(Ecyl)    #best value of Ecyl
+        index2 = Ecyl.index(final_Ecyl)
+        final_Ewp = Ewp[index2]   #best value of Ewp
     final_incr_n = incr_n[index2]
     final_incr_s = incr_s[index2]
     final_incr_w = incr_w[index2]
