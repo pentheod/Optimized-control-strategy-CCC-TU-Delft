@@ -1,5 +1,5 @@
 # Optimized-control-strategy-CCC-TU-Delft-
-Control strategy of Venetian blinds in an event space with fully glazed facades using model-based optimization.
+Control strategy for Venetian blinds in an event space with fully glazed facades using model-based optimization.
 [Developed within a Master thesis in TU Delft, based on the case study of the Co-Creation Center, in The Green Village.]
 
 The proposed control strategy of the blinds for indoor visual comfort is steered by an optimization process in Grasshopper, that leads to a theoretically ideal operation of the shading system. The optimization employed here is based on the Radial Basis Function Optimization (RBFOpt) algorithm, which can be performed by Grasshopper's component Opossum (OPtimizatiOn Solver with SUrrogate Models). RBFOpt is a black-box model-based optimization method, which has the ability to find robust results within a small number of evaluations,  rather than requiring an exhaustive search to find them. This constitutes a significant advantage in comparison to other optimization algorithms.
