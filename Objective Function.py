@@ -1,4 +1,20 @@
 import rhinoscriptsyntax as rs
+#Inputs:
+#Ewp = list of average workplane illuminances calculated during optimization's iterations
+#Ecyl = list of maximum cylindrical illuminances calculated during optimization's iterations
+#mode = activity mode (presentation, meeting, workshop)
+#incr_n = list of North blinds' increments tested during optimization's iterations
+#incr_s = list of South blinds' increments tested during optimization's iterations
+#incr_e = list of East blinds' increments tested during optimization's iterations
+#incr_w = list of West blinds' increments tested during optimization's iterations
+#angle_n = list of North blinds' angles tested during optimization's iterations
+#angle_s = list of South blinds' angles tested during optimization's iterations
+#angle_e = list of East blinds' angles tested during optimization's iterations
+#angle_w = list of West blinds' angles tested during optimization's iterations
+#Nol = number of luminaires
+#Lumfl = luminous flux per luminaire (
+#P = power per luminaire 
+#A = floor area
 
 #mode == 0: presentation
 #mode == 1: meeting
@@ -41,15 +57,29 @@ else:    #End of optimization
         final_Ecyl = min(Ecyl)   #best value of Ecyl
         index2 = Ecyl.index(final_Ecyl)
         final_Ewp = Ewp[index2]   #best value of Ewp
+        if min_Ewp < minlim: 
+            light_intensity = A * (minlim - min_Ewp) / (Nol * Lumfl)
+            light_dim_level = math.ceil(light_intensity * 10) / 10
+            Electricity = light_dim_level * Nol * P * 0.001 /4  #kWh
+        else:
+            light_dim_level = 0
+            Electricity = 0
     else:
         final_Ecyl = max(Ecyl)    #best value of Ecyl
         index2 = Ecyl.index(final_Ecyl)
         final_Ewp = Ewp[index2]   #best value of Ewp
+        if min_Ewp < minlim: 
+            light_intensity = A * (minlim - min_Ewp) / (Nol * Lumfl)
+            light_dim_level = math.ceil(light_intensity * 10) / 10
+            Electricity = light_dim_level * Nol * P * 0.001 /4  #kWh
+        else:
+            light_dim_level = 0
+            Electricity = 0 
     final_incr_n = incr_n[index2]
     final_incr_s = incr_s[index2]
     final_incr_w = incr_w[index2]
     final_incr_e = incr_e[index2]
-    final_angle_n = incr_n[index2]
-    final_angle_s = incr_s[index2]
-    final_angle_w = incr_w[index2]
-    final_angle_e = incr_e[index2]
+    final_angle_n = angle_n[index2]
+    final_angle_s = angle_s[index2]
+    final_angle_w = angle_w[index2]
+    final_angle_e = angle_e[index2]
