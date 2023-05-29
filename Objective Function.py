@@ -12,8 +12,8 @@ import rhinoscriptsyntax as rs
 #angle_e = list of East blinds' angles tested during optimization's iterations
 #angle_w = list of West blinds' angles tested during optimization's iterations
 #Nol = number of luminaires
-#Lumfl = luminous flux per luminaire (
-#P = power per luminaire 
+#Lumfl = luminous flux per luminaire (lm)
+#P = power per luminaire (W)
 #A = floor area
 
 #mode == 0: presentation
