@@ -16,4 +16,4 @@ The optimization algorithm is basically described by a single objective function
 
 During workshops and meetings, the control system tries to maximize the objective function, whereas during presentations its minimization is targeted. The penalty is derived from the optimization constraints and is applied to enforce the algorithm to find values for Ewp and Ecyl within their limits. The objective function is harder penalized when Ecyl is above 1400 lx, as glare prevention is prioritized.
 
-More details can be found in the Master thesis "Control strategy for Venetian blinds and electric lighting in an event space with fully glazed facades", available at http://repository.tudelft.nl/.
+More details can be found in the Master thesis "Optimized control strategy for Venetian blinds in an event space with fully glazed facades", available at http://repository.tudelft.nl/.
