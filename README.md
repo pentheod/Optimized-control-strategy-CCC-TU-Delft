@@ -1,4 +1,4 @@
-# Optimized-control-strategy-CCC-TU-Delft-
+# Optimized-control-strategy-CCC-TU-Delft
 Control strategy for Venetian blinds in an event space with fully glazed facades using model-based optimization.
 [Developed within a Master thesis in TU Delft, based on the case study of the Co-Creation Center, in The Green Village.]
 
