@@ -29,7 +29,7 @@ elif mode == 1:
 elif mode == 2:
     minlim = 750
 
-while len(Ecyl) <= 20:    #Running the optimization until the number of iterations reaches 20
+while len(Ecyl) <= 20:    #Running the optimization until the number of iterations reaches 20 (This is not needed if the optimization is run in Grasshopper, because the number of iterations is defined within the optimization component)
     if mode == 0:    #Presentation mode
         for i in Ewp:
             index = Ewp.index(i)
